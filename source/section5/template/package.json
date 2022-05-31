@@ -1,0 +1,52 @@
+{
+  "name": "vue",
+  "version": "1.0.0",
+  "description": "",
+  "devDependencies": {
+    "@htmlacademy/editorconfig-cli": "^1.0.0",
+    "autoprefixer": "^9.4.7",
+    "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-htmlacademy": "^0.5.2",
+    "gulp": "4.0.x",
+    "gulp-csso": "^3.0.1",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-newer": "^1.4.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-posthtml": "^3.0.4",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-svgmin": "^2.1.0",
+    "gulp-svgstore": "^7.0.1",
+    "postcss-object-fit-images": "^1.1.2",
+    "stylelint": "^13.7.2",
+    "stylelint-config-htmlacademy": "^0.1.4"
+  },
+  "scripts": {
+    "editorconfig": "editorconfig-cli",
+    "stylelint": "stylelint \"src/sass/**/*.scss\" --syntax scss",
+    "eslint": "eslint \"src/js/**/*.js\"",
+    "test": "npm run editorconfig && npm run stylelint && npm run eslint",
+    "build": "gulp build",
+    "start": "gulp start"
+  },
+  "editorconfig-cli": [
+    "*.json",
+    "*.js",
+    "src/*.html",
+    "src/js/modules/*.js",
+    "src/sass/*.{sass,scss}",
+    "src/sass/general/**/*.{sass,scss}",
+    "src/sass/blocks/**/*.{sass,scss}"
+  ],
+  "eslintConfig": {
+    "extends": "htmlacademy/es5"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "IE 11"
+  ],
+  "license": "ISC"
+}
