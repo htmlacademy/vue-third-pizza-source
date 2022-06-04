@@ -1,13 +1,15 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
+import { RouterView } from "vue-router";
+import { AppLayout } from "@/layouts";
 </script>
 
 <template>
-  <router-link to="/">Home</router-link> |
-  <router-link to="/about">About</router-link>
-  <RouterView />
+  <app-layout>
+    <RouterView />
+  </app-layout>
 </template>
 
 <style lang="scss">
 @import "@/assets/base.scss";
+@import "@/assets/scss/app.scss";
 </style>
