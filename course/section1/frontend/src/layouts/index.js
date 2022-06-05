@@ -1,3 +1,1 @@
-import AppLayout from "@/layouts/AppLayout.vue";
-
-export { AppLayout };
+export { default as AppLayout } from "@/layouts/AppLayout.vue";
