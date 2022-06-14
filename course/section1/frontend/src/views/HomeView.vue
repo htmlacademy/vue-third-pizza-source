@@ -155,7 +155,7 @@ import {
   normalizeSauces,
   normalizeSize,
 } from "@/common/helpers/normalize";
-import pizza from "@/static/pizza.json";
+import pizza from "@/mocks/pizza.json";
 const {
   dough: doughData,
   ingredients: ingredientsData,
