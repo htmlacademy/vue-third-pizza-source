@@ -175,7 +175,6 @@ const getImage = (image) => {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/mixins/mixins.scss";
 @import "@/assets/scss/app.scss";
 
 .content {
