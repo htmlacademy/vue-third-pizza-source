@@ -1,10 +1,10 @@
 <template>
-  <div class="ingredients-selector">
+  <div class="ingredients__filling">
     <p>Начинка:</p>
 
-    <ul class="ingredients-selector__list">
+    <ul class="ingredients__list">
       <li
-        class="ingredients-selector__item"
+        class="ingredients__item"
         v-for="ingredientType in items"
         :key="ingredientType.id"
       >
@@ -21,7 +21,7 @@
           </div>
         </app-drag>
 
-        <div class="counter ingredients-selector__counter">
+        <div class="counter ingredients__counter">
           <button
             type="button"
             class="counter__button counter__button--minus"
@@ -53,7 +53,7 @@
 
 <script setup>
 import { toRef } from "vue";
-import { AppDrag } from "@/components";
+import AppDrag from "@/common/components/AppDrag.vue";
 import { MAX_INGREDIENT_COUNT } from "@/common/constants";
 
 const props = defineProps({
@@ -99,7 +99,7 @@ const getImage = (image) => {
 <style lang="scss" scoped>
 @import "@/assets/scss/app.scss";
 
-.ingredients-selector {
+.ingredients__filling {
   width: 100%;
 
   p {
@@ -110,7 +110,7 @@ const getImage = (image) => {
   }
 }
 
-.ingredients-selector__list {
+.ingredients__list {
   @include clear-list;
 
   display: flex;
@@ -118,14 +118,14 @@ const getImage = (image) => {
   flex-wrap: wrap;
 }
 
-.ingredients-selector__item {
+.ingredients__item {
   width: 100px;
   min-height: 40px;
   margin-right: 17px;
   margin-bottom: 35px;
 }
 
-.ingredients-selector__counter {
+.ingredients__counter {
   width: 54px;
   margin-top: 10px;
   margin-left: 36px;

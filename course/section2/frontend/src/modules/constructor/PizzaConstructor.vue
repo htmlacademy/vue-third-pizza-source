@@ -20,8 +20,8 @@
 </template>
 
 <script setup>
-import { AppDrop } from "@/components";
 import { computed } from "vue";
+import AppDrop from "@/common/components/AppDrop.vue";
 
 const TWO_INGREDIENTS = 2;
 const THREE_INGREDIENTS = 3;

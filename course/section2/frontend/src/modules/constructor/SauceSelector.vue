@@ -1,5 +1,5 @@
 <template>
-  <div class="sauce-selector">
+  <div class="ingredients__sauce">
     <p>Основной соус:</p>
 
     <label
@@ -37,7 +37,7 @@ const emit = defineEmits(["update:modelValue"]);
 <style lang="scss" scoped>
 @import "@/assets/scss/app.scss";
 
-.sauce-selector {
+.ingredients__sauce {
   display: flex;
   align-items: center;
   flex-wrap: wrap;

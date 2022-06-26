@@ -1,12 +1,12 @@
 <template>
-  <div class="diameter-selector">
+  <div class="content__diameter">
     <div class="sheet">
       <h2 class="title title--small sheet__title">Выберите размер</h2>
 
       <div class="sheet__content">
         <label
-          class="diameter-selector__input"
-          :class="`diameter-selector__input--${sizeType.value}`"
+          class="diameter__input"
+          :class="`diameter__input--${sizeType.value}`"
           v-for="sizeType in items"
           :key="sizeType.id"
         >
@@ -43,13 +43,13 @@ const emit = defineEmits(["update:modelValue"]);
 <style lang="scss" scoped>
 @import "@/assets/scss/app.scss";
 
-.diameter-selector {
+.content__diameter {
   width: 373px;
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
-.diameter-selector__input {
+.diameter__input {
   margin-right: 8.7%;
   margin-bottom: 20px;
   padding-top: 7px;

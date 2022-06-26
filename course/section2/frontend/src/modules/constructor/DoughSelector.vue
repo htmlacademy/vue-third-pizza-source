@@ -1,11 +1,11 @@
 <template>
-  <div class="dough-selector">
+  <div class="content__dough">
     <div class="sheet">
       <h2 class="title title--small sheet__title">Выберите тесто</h2>
 
       <div class="sheet__content">
         <label
-          class="dough-selector__input"
+          class="dough__input"
           v-for="doughType in items"
           :key="doughType.id"
         >
@@ -49,14 +49,14 @@ const getImage = (image) => {
 <style lang="scss" scoped>
 @import "@/assets/scss/app.scss";
 
-.dough-selector {
+.content__dough {
   width: 527px;
   margin-top: 15px;
   margin-right: auto;
   margin-bottom: 15px;
 }
 
-.dough-selector__input {
+.dough__input {
   position: relative;
 
   margin-right: 8%;
