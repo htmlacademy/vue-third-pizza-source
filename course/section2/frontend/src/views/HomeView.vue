@@ -40,7 +40,8 @@
           <pizza-constructor
             :dough="dough"
             :sauce="sauce"
-            :ingredients="pizzaIngredients"
+            :ingredients="ingredients"
+            @drop="addIngredient"
           />
 
           <div class="content__result">
@@ -95,10 +96,6 @@ const ingredients = ref(
   }, {})
 );
 
-const pizzaIngredients = computed(() => {
-  return ingredientItems.filter((item) => ingredients.value[item.value] > 0);
-});
-
 const price = computed(() => {
   const sizeMultiplier =
     sizeItems.find((item) => item.value === size.value)?.multiplier ?? 1;
@@ -120,8 +117,12 @@ const disableSubmit = computed(() => {
   return name.value.length === 0 || price.value === 0;
 });
 
-const updateIngredientAmount = (value, count) => {
-  ingredients.value[value] = count;
+const addIngredient = (ingredient) => {
+  ingredients.value[ingredient]++;
+};
+
+const updateIngredientAmount = (ingredient, count) => {
+  ingredients.value[ingredient] = count;
 };
 </script>
 

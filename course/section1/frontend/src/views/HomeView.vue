@@ -892,7 +892,7 @@ const getImage = (image) => {
     background-image: url("@/assets/img/filling-big/blue_cheese.svg");
   }
 
-  &--cheddarcheddar,
+  &--cheddar,
   &--cheddar.pizza__filling--second::before,
   &--cheddar.pizza__filling--third::after {
     background-image: url("@/assets/img/filling-big/cheddar.svg");

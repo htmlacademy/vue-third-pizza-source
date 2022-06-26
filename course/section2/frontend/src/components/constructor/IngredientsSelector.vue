@@ -8,13 +8,18 @@
         v-for="ingredientType in items"
         :key="ingredientType.id"
       >
-        <div class="filling">
-          <img
-            :src="getImage(ingredientType.image)"
-            :alt="ingredientType.name"
-          />
-          {{ ingredientType.name }}
-        </div>
+        <app-drag
+          :data-transfer="ingredientType"
+          :draggable="getValue(ingredientType.value) < MAX_INGREDIENT_COUNT"
+        >
+          <div class="filling">
+            <img
+              :src="getImage(ingredientType.image)"
+              :alt="ingredientType.name"
+            />
+            {{ ingredientType.name }}
+          </div>
+        </app-drag>
 
         <div class="counter ingredients-selector__counter">
           <button
@@ -30,11 +35,12 @@
             name="counter"
             class="counter__input"
             :value="getValue(ingredientType.value)"
-            @input="setValue(ingredientType.value, $event.target.value)"
+            @input="inputValue(ingredientType.value, $event.target.value)"
           />
           <button
             type="button"
             class="counter__button counter__button--plus"
+            :disabled="getValue(ingredientType.value) === MAX_INGREDIENT_COUNT"
             @click="incrementValue(ingredientType.value)"
           >
             <span class="visually-hidden">Больше</span>
@@ -47,6 +53,8 @@
 
 <script setup>
 import { toRef } from "vue";
+import { AppDrag } from "@/components";
+import { MAX_INGREDIENT_COUNT } from "@/common/constants";
 
 const props = defineProps({
   values: {
@@ -63,20 +71,24 @@ const emit = defineEmits(["update"]);
 
 const values = toRef(props, "values");
 
-const getValue = (value) => {
-  return values.value[value] ?? 0;
+const getValue = (ingredient) => {
+  return values.value[ingredient] ?? 0;
 };
 
-const setValue = (value, count) => {
-  emit("update", value, Number(count));
+const setValue = (ingredient, count) => {
+  emit("update", ingredient, Number(count));
 };
 
-const decrementValue = (value) => {
-  setValue(value, getValue(value) - 1);
+const decrementValue = (ingredient) => {
+  setValue(ingredient, getValue(ingredient) - 1);
 };
 
-const incrementValue = (value) => {
-  setValue(value, getValue(value) + 1);
+const incrementValue = (ingredient) => {
+  setValue(ingredient, getValue(ingredient) + 1);
+};
+
+const inputValue = (ingredient, count) => {
+  return setValue(ingredient, Math.min(MAX_INGREDIENT_COUNT, Number(count)));
 };
 
 const getImage = (image) => {

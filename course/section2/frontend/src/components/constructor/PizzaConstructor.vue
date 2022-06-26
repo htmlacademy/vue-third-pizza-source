@@ -1,20 +1,32 @@
 <template>
   <div class="pizza-constructor">
-    <div class="pizza" :class="`pizza--foundation--${dough}-${sauce}`">
-      <div class="pizza__wrapper">
-        <div
-          v-for="ingredientType in ingredients"
-          :key="ingredientType.id"
-          class="pizza__filling"
-          :class="`pizza__filling--${ingredientType.value}`"
-        />
+    <app-drop @drop="emit('drop', $event.value)">
+      <div class="pizza" :class="`pizza--foundation--${dough}-${sauce}`">
+        <div class="pizza__wrapper">
+          <div
+            v-for="(value, key) in pizzaIngredients"
+            :key="key"
+            class="pizza__filling"
+            :class="[
+              `pizza__filling--${key}`,
+              value === TWO_INGREDIENTS && 'pizza__filling--second',
+              value === THREE_INGREDIENTS && 'pizza__filling--third',
+            ]"
+          />
+        </div>
       </div>
-    </div>
+    </app-drop>
   </div>
 </template>
 
 <script setup>
-defineProps({
+import { AppDrop } from "@/components";
+import { computed } from "vue";
+
+const TWO_INGREDIENTS = 2;
+const THREE_INGREDIENTS = 3;
+
+const props = defineProps({
   dough: {
     type: String,
     default: "light",
@@ -24,9 +36,21 @@ defineProps({
     default: "tomato",
   },
   ingredients: {
-    type: Array,
-    default: () => [],
+    type: Object,
+    default: () => ({}),
   },
+});
+
+const emit = defineEmits(["drop"]);
+
+const pizzaIngredients = computed(() => {
+  return Object.entries(props.ingredients).reduce((result, entry) => {
+    const [key, value] = entry;
+    if (value > 0) {
+      result[key] = value;
+    }
+    return result;
+  }, {});
 });
 </script>
 
@@ -116,7 +140,7 @@ defineProps({
     background-image: url("@/assets/img/filling-big/blue_cheese.svg");
   }
 
-  &--cheddarcheddar,
+  &--cheddar,
   &--cheddar.pizza__filling--second::before,
   &--cheddar.pizza__filling--third::after {
     background-image: url("@/assets/img/filling-big/cheddar.svg");
