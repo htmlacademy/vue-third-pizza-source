@@ -5,10 +5,10 @@
 
       <div class="sheet__content">
         <label
-          class="diameter__input"
-          :class="`diameter__input--${sizeType.value}`"
           v-for="sizeType in items"
           :key="sizeType.id"
+          class="diameter__input"
+          :class="`diameter__input--${sizeType.value}`"
         >
           <input
             type="radio"

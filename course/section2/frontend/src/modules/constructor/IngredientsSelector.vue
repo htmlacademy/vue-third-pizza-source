@@ -4,9 +4,9 @@
 
     <ul class="ingredients__list">
       <li
-        class="ingredients__item"
         v-for="ingredientType in items"
         :key="ingredientType.id"
+        class="ingredients__item"
       >
         <app-drag
           :data-transfer="ingredientType"

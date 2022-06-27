@@ -30,10 +30,10 @@
           <label class="input">
             <span class="visually-hidden">Название пиццы</span>
             <input
+              v-model="pizza.name"
               type="text"
               name="pizza_name"
               placeholder="Введите название пиццы"
-              v-model="pizza.name"
             />
           </label>
 

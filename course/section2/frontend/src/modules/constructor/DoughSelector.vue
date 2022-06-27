@@ -5,9 +5,9 @@
 
       <div class="sheet__content">
         <label
-          class="dough__input"
           v-for="doughType in items"
           :key="doughType.id"
+          class="dough__input"
         >
           <input
             type="radio"

@@ -3,9 +3,9 @@
     <p>Основной соус:</p>
 
     <label
-      class="radio ingredients__input"
       v-for="sauceType in items"
       :key="sauceType.id"
+      class="radio ingredients__input"
     >
       <input
         type="radio"
