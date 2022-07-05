@@ -155,18 +155,15 @@ import {
   normalizeSauces,
   normalizeSize,
 } from "@/common/helpers/normalize";
-import pizza from "@/mocks/pizza.json";
-const {
-  dough: doughData,
-  ingredients: ingredientsData,
-  sauces: saucesData,
-  sizes: sizesData,
-} = pizza;
+import doughJSON from "@/mocks/dough.json";
+import ingredientsJSON from "@/mocks/ingredients.json";
+import saucesJSON from "@/mocks/sauces.json";
+import sizesJSON from "@/mocks/sizes.json";
 
-const dough = doughData.map(normalizeDough);
-const ingredients = ingredientsData.map(normalizeIngredients);
-const sauces = saucesData.map(normalizeSauces);
-const sizes = sizesData.map(normalizeSize);
+const dough = doughJSON.map(normalizeDough);
+const ingredients = ingredientsJSON.map(normalizeIngredients);
+const sauces = saucesJSON.map(normalizeSauces);
+const sizes = sizesJSON.map(normalizeSize);
 
 const getImage = (image) => {
   // https://vitejs.dev/guide/assets.html#new-url-url-import-meta-url
