@@ -102,6 +102,11 @@ const price = computed(() => {
   const saucePrice =
     sauceItems.find((item) => item.value === sauce)?.price ?? 0;
 
+  /*
+   * Здесь мы при помощи метода map превращаем массив ингредиентов
+   * в массив значений, соответствующих итоговой стоимости каждого из них - просто умножив известную цену на количество.
+   * После чего методом reduce вычисляем сумму всех элементов массива, что даст нам общую стоимость всех ингредиентов.
+   */
   const ingredientsPrice = ingredientItems
     .map((item) => ingredients[item.value] * item.price)
     .reduce((acc, item) => acc + item, 0);

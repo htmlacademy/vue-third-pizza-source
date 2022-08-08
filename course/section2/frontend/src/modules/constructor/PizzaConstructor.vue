@@ -44,11 +44,21 @@ const props = defineProps({
 const emit = defineEmits(["drop"]);
 
 const pizzaIngredients = computed(() => {
+  /*
+   * props.ingredients - это объект с ингредиентами вида { ингредиент: количество }
+   * при помощи reduce нам нужно оставить только те, количество которые больше 0
+   * для этого перебираем каждую пару [ингредиент, количество]
+   * и если количество больше 0, добавляем в объект-результат
+   */
   return Object.entries(props.ingredients).reduce((result, entry) => {
+    /* [ингредиент, количество] */
     const [key, value] = entry;
+
     if (value > 0) {
+      /* ингредиент присутствует в пицце */
       result[key] = value;
     }
+
     return result;
   }, {});
 });
