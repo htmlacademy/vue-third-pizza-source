@@ -217,7 +217,7 @@
   </section>
 </template>
 
-<script lang="ts" setup>
+<script setup>
 const getImage = (image) => {
   return new URL(`../assets/img/${image}`, import.meta.url).href;
 };

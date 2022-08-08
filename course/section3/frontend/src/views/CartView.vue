@@ -230,7 +230,7 @@
   </form>
 </template>
 
-<script lang="ts" setup>
+<script setup>
 import AppCounter from "@/common/components/AppCounter.vue";
 import { ref } from "vue";
 

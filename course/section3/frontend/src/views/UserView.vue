@@ -21,7 +21,7 @@
   </sidebar-layout>
 </template>
 
-<script lang="ts" setup>
+<script setup>
 import SidebarLayout from "@/layouts/SidebarLayout.vue";
 import { useRoute } from "vue-router";
 import { computed } from "vue";
