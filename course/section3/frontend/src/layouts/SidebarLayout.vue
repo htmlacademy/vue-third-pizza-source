@@ -20,7 +20,7 @@
 </template>
 
 <style lang="scss">
-@import "@/assets/scss/app.scss";
+@import "@/assets/scss/ds-system/ds.scss";
 
 .layout__sidebar {
   position: fixed;

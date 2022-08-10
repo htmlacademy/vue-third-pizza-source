@@ -53,11 +53,11 @@ const emit = defineEmits(["input"]);
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/app.scss";
+@import "@/assets/scss/ds-system/ds.scss";
+@import "@/assets/scss/mixins/mixins.scss";
 
 .counter {
   display: flex;
-
   justify-content: space-between;
   align-items: center;
 }

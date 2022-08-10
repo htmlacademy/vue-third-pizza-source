@@ -126,7 +126,7 @@
 <script setup></script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/app.scss";
+@import "@/assets/scss/ds-system/ds.scss";
 
 .user {
   display: flex;
