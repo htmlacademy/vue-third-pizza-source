@@ -65,8 +65,6 @@ const pizzaIngredients = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/app.scss";
-
 .pizza-constructor {
   width: 315px;
   margin-top: 25px;

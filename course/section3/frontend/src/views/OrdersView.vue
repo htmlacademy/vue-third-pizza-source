@@ -224,7 +224,7 @@ const getImage = (image) => {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/app.scss";
+@import "@/assets/scss/ds-system/ds.scss";
 
 .order {
   margin-bottom: 32px;

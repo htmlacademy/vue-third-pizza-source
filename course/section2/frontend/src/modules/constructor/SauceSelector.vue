@@ -35,7 +35,7 @@ const emit = defineEmits(["update:modelValue"]);
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/app.scss";
+@import "@/assets/scss/ds-system/ds.scss";
 
 .ingredients__sauce {
   display: flex;

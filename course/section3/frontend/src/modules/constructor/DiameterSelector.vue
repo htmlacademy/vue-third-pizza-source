@@ -41,7 +41,8 @@ const emit = defineEmits(["update:modelValue"]);
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/app.scss";
+@import "@/assets/scss/ds-system/ds.scss";
+@import "@/assets/scss/mixins/mixins.scss";
 
 .content__diameter {
   width: 373px;

@@ -43,7 +43,7 @@ const password = ref("");
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/app.scss";
+@import "@/assets/scss/mixins/mixins.scss";
 
 .sign-form {
   @include pf_center-all;

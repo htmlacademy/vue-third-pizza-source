@@ -10,9 +10,9 @@
 
             <div class="sheet__content dough">
               <label
-                class="dough__input"
                 v-for="doughType in dough"
                 :key="doughType.id"
+                class="dough__input"
               >
                 <input
                   type="radio"
@@ -36,10 +36,10 @@
 
             <div class="sheet__content diameter">
               <label
-                class="diameter__input"
-                :class="`diameter__input--${sizeType.value}`"
                 v-for="sizeType in sizes"
                 :key="sizeType.id"
+                class="diameter__input"
+                :class="`diameter__input--${sizeType.value}`"
               >
                 <input
                   type="radio"
@@ -64,9 +64,9 @@
                 <p>Основной соус:</p>
 
                 <label
-                  class="radio ingredients__input"
                   v-for="sauceType in sauces"
                   :key="sauceType.id"
+                  class="radio ingredients__input"
                 >
                   <input type="radio" name="sauce" :value="sauceType.value" />
                   <span>{{ sauceType.name }}</span>
@@ -78,9 +78,9 @@
 
                 <ul class="ingredients__list">
                   <li
-                    class="ingredients__item"
                     v-for="ingredientType in ingredients"
                     :key="ingredientType.id"
+                    class="ingredients__item"
                   >
                     <div class="filling">
                       <img
@@ -172,7 +172,8 @@ const getImage = (image) => {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/app.scss";
+@import "@/assets/scss/ds-system/ds.scss";
+@import "@/assets/scss/mixins/mixins.scss";
 
 .content {
   padding-top: 20px;
