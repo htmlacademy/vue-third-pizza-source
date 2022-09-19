@@ -38,6 +38,7 @@
 <script setup>
 import { ref } from "vue";
 
+/* Авторизация будет реализована в разделе 5 */
 const email = ref("");
 const password = ref("");
 </script>
