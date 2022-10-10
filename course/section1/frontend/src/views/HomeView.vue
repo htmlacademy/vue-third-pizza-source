@@ -10,7 +10,7 @@
 
             <div class="sheet__content dough">
               <label
-                v-for="doughType in dough"
+                v-for="doughType in doughItems"
                 :key="doughType.id"
                 class="dough__input"
               >
@@ -36,7 +36,7 @@
 
             <div class="sheet__content diameter">
               <label
-                v-for="sizeType in sizes"
+                v-for="sizeType in sizeItems"
                 :key="sizeType.id"
                 class="diameter__input"
                 :class="`diameter__input--${sizeType.value}`"
@@ -64,7 +64,7 @@
                 <p>Основной соус:</p>
 
                 <label
-                  v-for="sauceType in sauces"
+                  v-for="sauceType in sauceItems"
                   :key="sauceType.id"
                   class="radio ingredients__input"
                 >
@@ -78,7 +78,7 @@
 
                 <ul class="ingredients__list">
                   <li
-                    v-for="ingredientType in ingredients"
+                    v-for="ingredientType in ingredientItems"
                     :key="ingredientType.id"
                     class="ingredients__item"
                   >
@@ -160,10 +160,10 @@ import ingredientsJSON from "@/mocks/ingredients.json";
 import saucesJSON from "@/mocks/sauces.json";
 import sizesJSON from "@/mocks/sizes.json";
 
-const dough = doughJSON.map(normalizeDough);
-const ingredients = ingredientsJSON.map(normalizeIngredients);
-const sauces = saucesJSON.map(normalizeSauces);
-const sizes = sizesJSON.map(normalizeSize);
+const doughItems = doughJSON.map(normalizeDough);
+const ingredientItems = ingredientsJSON.map(normalizeIngredients);
+const sauceItems = saucesJSON.map(normalizeSauces);
+const sizeItems = sizesJSON.map(normalizeSize);
 
 const getImage = (image) => {
   // https://vitejs.dev/guide/assets.html#new-url-url-import-meta-url
@@ -171,7 +171,7 @@ const getImage = (image) => {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "@/assets/scss/ds-system/ds.scss";
 @import "@/assets/scss/mixins/mixins.scss";
 
