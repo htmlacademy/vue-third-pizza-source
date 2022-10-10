@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="header__logo">
-      <a href="/course/section1/frontend/public" class="logo">
+      <a href="/" class="logo">
         <img
           src="@/assets/img/logo.svg"
           alt="V!U!E! Pizza logo"
@@ -11,10 +11,10 @@
       </a>
     </div>
     <div class="header__cart">
-      <a href="/course/section1/frontend/public">0 ₽</a>
+      <a href="/">0 ₽</a>
     </div>
     <div class="header__user">
-      <a href="/course/section1/frontend/public">
+      <a href="/">
         <picture>
           <source
             type="image/webp"
@@ -33,7 +33,7 @@
         </picture>
         <span>Василий Ложкин</span>
       </a>
-      <a href="/course/section1/frontend/public" class="header__logout">
+      <a href="/" class="header__logout">
         <span>Выйти</span>
       </a>
     </div>
