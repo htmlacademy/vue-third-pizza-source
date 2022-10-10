@@ -1,12 +1,12 @@
 export const routes = [
   {
     path: "",
-    name: "home",
+    name: "/home",
     component: () => import("@/views/HomeView.vue"),
     meta: { layout: "DefaultLayout" },
   },
   {
-    path: "login",
+    path: "/login",
     name: "login",
     component: () => import("@/views/LoginView.vue"),
     meta: { layout: "SimpleLayout" },
