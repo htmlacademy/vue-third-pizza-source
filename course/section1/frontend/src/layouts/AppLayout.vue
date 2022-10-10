@@ -6,5 +6,5 @@
 </template>
 
 <script setup>
-import { AppHeader } from "@/components";
+import AppHeader from "./AppHeader.vue";
 </script>
