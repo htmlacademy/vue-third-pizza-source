@@ -43,6 +43,7 @@ const password = ref("");
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/scss/ds-system/ds.scss";
 @import "@/assets/scss/mixins/mixins.scss";
 
 .sign-form {
