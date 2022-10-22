@@ -1,13 +1,24 @@
-<script setup>
-import { RouterLink, RouterView } from "vue-router";
-</script>
-
 <template>
-  <router-link to="/">Home</router-link> |
-  <router-link to="/about">About</router-link>
-  <RouterView />
+  <auth-middleware>
+    <app-layout>
+      <router-view />
+    </app-layout>
+  </auth-middleware>
 </template>
 
+<script setup>
+import AppLayout from "@/layouts/AppLayout.vue";
+import AuthMiddleware from "@/AuthMiddleware.vue";
+import { onMounted } from "vue";
+import { useDataStore } from "@/stores/data";
+
+const dataStore = useDataStore();
+
+onMounted(() => {
+  dataStore.loadData();
+});
+</script>
+
 <style lang="scss">
-@import "@/assets/base.scss";
+@import "@/assets/scss/app.scss";
 </style>
