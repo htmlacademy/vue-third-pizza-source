@@ -4,22 +4,12 @@
   </div>
 
   <div v-if="authStore.user" class="user">
-    <picture>
-      <source
-        type="image/webp"
-        srcset="
-          @/assets/img/users/user5@2x.webp 1x,
-          @/assets/img/users/user5@4x.webp 2x
-        "
-      />
-      <img
-        src="@/assets/img/users/user5@2x.jpg"
-        srcset="@/assets/img/users/user5@4x.jpg"
-        alt="Василий Ложкин"
-        width="72"
-        height="72"
-      />
-    </picture>
+    <img
+      :src="getImage(authStore.user.avatar)"
+      :alt="authStore.user.name"
+      width="72"
+      height="72"
+    />
     <div class="user__name">
       <span>{{ authStore.user.name }}</span>
     </div>
@@ -80,6 +70,10 @@ const updateAddress = (address, data) => {
     ...address,
     ...data,
   });
+};
+
+const getImage = (image) => {
+  return new URL(`../assets/img/${image}`, import.meta.url).href;
 };
 </script>
 

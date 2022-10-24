@@ -1,3 +1,5 @@
+import { isLoggedIn } from "@/middlewares/isAuthenticated";
+
 export const routes = [
   {
     path: "",
@@ -17,7 +19,7 @@ export const routes = [
     component: () => import("@/views/CartView.vue"),
     meta: {
       layout: "DefaultLayout",
-      requiresAuth: true,
+      middlewares: [isLoggedIn],
     },
   },
   {
@@ -32,7 +34,7 @@ export const routes = [
     component: () => import("@/views/UserView.vue"),
     meta: {
       layout: "DefaultLayout",
-      requiresAuth: true,
+      middlewares: [isLoggedIn],
     },
     children: [
       {

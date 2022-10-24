@@ -38,11 +38,10 @@
 <script setup>
 import { ref } from "vue";
 import { useAuthStore } from "@/stores/auth";
-import { useRoute, useRouter } from "vue-router";
+import { useRouter } from "vue-router";
 
 const authStore = useAuthStore();
 const router = useRouter();
-const route = useRoute();
 
 const email = ref("");
 const password = ref("");
@@ -52,9 +51,7 @@ const login = async () => {
     email: email.value,
     password: password.value,
   });
-
-  const { redirect } = route.query;
-  await router.push(!redirect ? { name: "home" } : redirect);
+  await router.push({ name: "home" });
 };
 </script>
 

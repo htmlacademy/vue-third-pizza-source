@@ -15,22 +15,12 @@
     </div>
     <div class="header__user">
       <router-link v-if="authStore.isAuthenticated" :to="{ name: 'profile' }">
-        <picture>
-          <source
-            type="image/webp"
-            srcset="
-              @/assets/img/users/user5.webp    1x,
-              @/assets/img/users/user5@2x.webp 2x
-            "
-          />
-          <img
-            src="@/assets/img/users/user5.jpg"
-            srcset="@/assets/img/users/user5@2x.jpg"
-            alt="Василий Ложкин"
-            width="32"
-            height="32"
-          />
-        </picture>
+        <img
+          :src="getImage(authStore.user.avatar)"
+          :alt="authStore.user.name"
+          width="32"
+          height="32"
+        />
         <span>Василий Ложкин</span>
       </router-link>
       <div
@@ -60,6 +50,10 @@ const router = useRouter();
 const logout = async () => {
   await authStore.logout();
   await router.replace({ name: "login" });
+};
+
+const getImage = (image) => {
+  return new URL(`../assets/img/${image}`, import.meta.url).href;
 };
 </script>
 

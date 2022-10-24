@@ -1,14 +1,11 @@
 <template>
-  <auth-middleware>
-    <app-layout>
-      <router-view />
-    </app-layout>
-  </auth-middleware>
+  <app-layout>
+    <router-view />
+  </app-layout>
 </template>
 
 <script setup>
 import AppLayout from "@/layouts/AppLayout.vue";
-import AuthMiddleware from "@/AuthMiddleware.vue";
 import { onMounted } from "vue";
 import { useDataStore } from "@/stores/data";
 
