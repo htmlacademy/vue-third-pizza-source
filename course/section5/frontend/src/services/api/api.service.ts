@@ -1,6 +1,15 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 
 export class ApiService {
+  _getError(e) {
+    if (e instanceof AxiosError) {
+      console.log("axios error", e.response);
+      return new Error(e.response.data?.error?.message ?? e.message);
+    } else {
+      return e.message;
+    }
+  }
+
   _wrapper1(method, url) {
     return async () => {
       try {
@@ -12,6 +21,7 @@ export class ApiService {
       } catch (e) {
         return {
           __state: "error",
+          data: this._getError(e),
         };
       }
     };
@@ -28,6 +38,7 @@ export class ApiService {
       } catch (e) {
         return {
           __state: "error",
+          data: this._getError(e),
         };
       }
     };

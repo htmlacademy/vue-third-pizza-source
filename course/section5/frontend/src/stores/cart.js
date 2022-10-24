@@ -160,7 +160,7 @@ export const useCartStore = defineStore("cart", {
       const authStore = useAuthStore();
 
       return await resources.order.createOrder({
-        userId: authStore.user.id,
+        userId: authStore.user?.id ?? null,
         phone: this.phone,
         address: this.address,
         pizzas: this.pizzas,

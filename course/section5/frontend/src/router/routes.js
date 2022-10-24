@@ -19,7 +19,6 @@ export const routes = [
     component: () => import("@/views/CartView.vue"),
     meta: {
       layout: "DefaultLayout",
-      middlewares: [isLoggedIn],
     },
   },
   {

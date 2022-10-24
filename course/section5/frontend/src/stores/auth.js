@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import resources from "@/services/resources";
 import jwtService from "@/services/jwt/jwt.service";
 import { useProfileStore } from "@/stores/profile";
+import JwtService from "@/services/jwt/jwt.service";
 
 export const useAuthStore = defineStore("auth", {
   state: () => ({
@@ -21,18 +22,21 @@ export const useAuthStore = defineStore("auth", {
       const res = await resources.auth.login(credentials);
       if (res.__state === "success") {
         jwtService.saveToken(res.data.token);
-        await this.whoami();
+        return "success";
+      } else {
+        return res.data.message;
       }
     },
 
     async logout() {
       await resources.auth.logout();
       jwtService.destroyToken();
-      resources.auth.setAuthHeader();
+      resources.auth.setAuthHeader("");
+      this.user = null;
     },
 
     async whoami() {
-      resources.auth.setAuthHeader();
+      resources.auth.setAuthHeader(JwtService.getToken());
       const profileStore = useProfileStore();
 
       const res1 = await resources.auth.whoami();

@@ -1,6 +1,5 @@
 import axios from "axios";
 import { ApiService } from "@/services/api/api.service";
-import JwtService from "@/services/jwt/jwt.service";
 
 export class AuthService extends ApiService {
   constructor(path) {
@@ -8,8 +7,7 @@ export class AuthService extends ApiService {
     this.path = path;
   }
 
-  setAuthHeader() {
-    const token = JwtService.getToken();
+  setAuthHeader(token) {
     axios.defaults.headers.common["Authorization"] = token
       ? `Bearer ${token}`
       : "";
