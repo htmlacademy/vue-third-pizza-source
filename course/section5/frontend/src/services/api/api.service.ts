@@ -3,7 +3,6 @@ import axios, { AxiosError } from "axios";
 export class ApiService {
   _getError(e) {
     if (e instanceof AxiosError) {
-      console.log("axios error", e.response);
       return new Error(e.response.data?.error?.message ?? e.message);
     } else {
       return e.message;

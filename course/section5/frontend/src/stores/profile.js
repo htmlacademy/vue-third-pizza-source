@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import { pizzaPrice } from "@/common/helpers/pizza-price";
 import { useDataStore } from "@/stores/data";
 import resources from "@/services/resources";
+import { useAuthStore } from "@/stores/auth";
 
 export const useProfileStore = defineStore("profile", {
   state: () => ({
@@ -79,7 +80,15 @@ export const useProfileStore = defineStore("profile", {
       }
     },
     async addAddress(address) {
-      const res = await resources.address.addAddress(address);
+      const authStore = useAuthStore();
+      if (!authStore.isAuthenticated) {
+        return;
+      }
+
+      const res = await resources.address.addAddress({
+        ...address,
+        userId: authStore.user.id,
+      });
       if (res.__state === "success") {
         this.addresses.push(res.data);
       }

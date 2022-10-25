@@ -188,7 +188,9 @@ import { usePizzaStore } from "@/stores/pizza";
 import { useRouter } from "vue-router";
 import { computed, ref } from "vue";
 import { useProfileStore } from "@/stores/profile";
+import { useAuthStore } from "@/stores/auth";
 
+const authStore = useAuthStore();
 const cartStore = useCartStore();
 const pizzaStore = usePizzaStore();
 const profileStore = useProfileStore();
@@ -260,7 +262,7 @@ const submit = async () => {
 
   const res = await cartStore.publishOrder();
   if (res.__state === "success") {
-    await profileStore.loadOrders();
+    authStore.isAuthenticated && (await profileStore.loadOrders());
     await router.push({ name: "success" });
     cartStore.reset();
   }
