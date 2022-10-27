@@ -1,11 +1,11 @@
 import { useAuthStore } from "@/stores/auth";
 
-export const isLoggedIn = ({ next, nextMiddleware, to }) => {
+export const isLoggedIn = ({ to }) => {
   const authStore = useAuthStore();
 
   if (!authStore.isAuthenticated) {
-    next({ name: "login", query: { redirect: to.fullPath } });
+    return { path: "/login", query: { redirect: to.fullPath } };
   } else {
-    return nextMiddleware();
+    return true;
   }
 };
