@@ -112,91 +112,91 @@ const emit = defineEmits(["drop"]);
   &--ananas,
   &--ananas.pizza__filling--second::before,
   &--ananas.pizza__filling--third::after {
-    background-image: url("@/assets/img/filling-big/ananas.svg");
+    background-image: url("/api/public/img/filling-big/ananas.svg");
   }
 
   &--bacon,
   &--bacon.pizza__filling--second::before,
   &--bacon.pizza__filling--third::after {
-    background-image: url("@/assets/img/filling-big/bacon.svg");
+    background-image: url("/api/public/img/filling-big/bacon.svg");
   }
 
   &--blue_cheese,
   &--blue.pizza__filling--second::before,
   &--blue.pizza__filling--third::after {
-    background-image: url("@/assets/img/filling-big/blue_cheese.svg");
+    background-image: url("/api/public/img/filling-big/blue_cheese.svg");
   }
 
   &--cheddar,
   &--cheddar.pizza__filling--second::before,
   &--cheddar.pizza__filling--third::after {
-    background-image: url("@/assets/img/filling-big/cheddar.svg");
+    background-image: url("/api/public/img/filling-big/cheddar.svg");
   }
 
   &--chile,
   &--chile.pizza__filling--second::before,
   &--chile.pizza__filling--third::after {
-    background-image: url("@/assets/img/filling-big/chile.svg");
+    background-image: url("/api/public/img/filling-big/chile.svg");
   }
 
   &--ham,
   &--ham.pizza__filling--second::before,
   &--ham.pizza__filling--third::after {
-    background-image: url("@/assets/img/filling-big/ham.svg");
+    background-image: url("/api/public/img/filling-big/ham.svg");
   }
 
   &--jalapeno,
   &--jalapeno.pizza__filling--second::before,
   &--jalapeno.pizza__filling--third::after {
-    background-image: url("@/assets/img/filling-big/jalapeno.svg");
+    background-image: url("/api/public/img/filling-big/jalapeno.svg");
   }
 
   &--mozzarella,
   &--mozzarella.pizza__filling--second::before,
   &--mozzarella.pizza__filling--third::after {
-    background-image: url("@/assets/img/filling-big/mozzarella.svg");
+    background-image: url("/api/public/img/filling-big/mozzarella.svg");
   }
 
   &--mushrooms,
   &--mushrooms.pizza__filling--second::before,
   &--mushrooms.pizza__filling--third::after {
-    background-image: url("@/assets/img/filling-big/mushrooms.svg");
+    background-image: url("/api/public/img/filling-big/mushrooms.svg");
   }
 
   &--olives,
   &--olives.pizza__filling--second::before,
   &--olives.pizza__filling--third::after {
-    background-image: url("@/assets/img/filling-big/olives.svg");
+    background-image: url("/api/public/img/filling-big/olives.svg");
   }
 
   &--onion,
   &--onion.pizza__filling--second::before,
   &--onion.pizza__filling--third::after {
-    background-image: url("@/assets/img/filling-big/onion.svg");
+    background-image: url("/api/public/img/filling-big/onion.svg");
   }
 
   &--parmesan,
   &--parmesan.pizza__filling--second::before,
   &--parmesan.pizza__filling--third::after {
-    background-image: url("@/assets/img/filling-big/parmesan.svg");
+    background-image: url("/api/public/img/filling-big/parmesan.svg");
   }
 
   &--salami,
   &---salami.pizza__filling--second::before,
   &---salami.pizza__filling--third::after {
-    background-image: url("@/assets/img/filling-big/salami.svg");
+    background-image: url("/api/public/img/filling-big/salami.svg");
   }
 
   &--salmon,
   &--salmon.pizza__filling--second::before,
   &--salmon.pizza__filling--third::after {
-    background-image: url("@/assets/img/filling-big/salmon.svg");
+    background-image: url("/api/public/img/filling-big/salmon.svg");
   }
 
   &--tomatoes,
   &--tomatoes.pizza__filling--second::before,
   &--tomatoes.pizza__filling--third::after {
-    background-image: url("@/assets/img/filling-big/tomatoes.svg");
+    background-image: url("/api/public/img/filling-big/tomatoes.svg");
   }
 }
 
@@ -213,19 +213,19 @@ const emit = defineEmits(["drop"]);
   background-size: 100%;
 
   &--foundation--large-creamy {
-    background-image: url("@/assets/img/foundation/big-creamy.svg");
+    background-image: url("/api/public/img/foundation/big-creamy.svg");
   }
 
   &--foundation--large-tomato {
-    background-image: url("@/assets/img/foundation/big-tomato.svg");
+    background-image: url("/api/public/img/foundation/big-tomato.svg");
   }
 
   &--foundation--light-creamy {
-    background-image: url("@/assets/img/foundation/small-creamy.svg");
+    background-image: url("/api/public/img/foundation/small-creamy.svg");
   }
 
   &--foundation--light-tomato {
-    background-image: url("@/assets/img/foundation/small-tomato.svg");
+    background-image: url("/api/public/img/foundation/small-tomato.svg");
   }
 }
 </style>

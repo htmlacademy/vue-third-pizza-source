@@ -3,7 +3,7 @@
     <div class="header__logo">
       <router-link :to="{ name: 'home' }" class="logo">
         <img
-          src="@/assets/img/logo.svg"
+          :src="getPublicImage('/public/img/logo.svg')"
           alt="V!U!E! Pizza logo"
           width="90"
           height="40"
@@ -16,7 +16,7 @@
     <div class="header__user">
       <router-link v-if="authStore.isAuthenticated" :to="{ name: 'profile' }">
         <img
-          :src="getImage(authStore.user.avatar)"
+          :src="getPublicImage(authStore.user.avatar)"
           :alt="authStore.user.name"
           width="32"
           height="32"
@@ -41,6 +41,7 @@
 import { useAuthStore } from "@/stores/auth";
 import { useRouter } from "vue-router";
 import { useCartStore } from "@/stores/cart";
+import { getPublicImage } from "@/common/helpers/public-image";
 
 const authStore = useAuthStore();
 const cartStore = useCartStore();
@@ -50,10 +51,6 @@ const router = useRouter();
 const logout = async () => {
   await authStore.logout();
   await router.replace({ name: "login" });
-};
-
-const getImage = (image) => {
-  return new URL(`../assets/img/${image}`, import.meta.url).href;
 };
 </script>
 
@@ -92,7 +89,7 @@ const getImage = (image) => {
 
     color: $white;
     background-color: $green-500;
-    background-image: url("@/assets/img/cart.svg");
+    background-image: url("/api/public/img/cart.svg");
     background-repeat: no-repeat;
     background-position: 20px center;
     background-size: 29px 27px;
@@ -173,7 +170,7 @@ const getImage = (image) => {
     content: "";
     vertical-align: middle;
 
-    background: url("@/assets/img/login.svg") no-repeat center;
+    background: url("/api/public/img/login.svg") no-repeat center;
     background-size: auto 50%;
   }
 }
@@ -189,7 +186,7 @@ const getImage = (image) => {
     content: "";
     vertical-align: middle;
 
-    background: url("@/assets/img/login.svg") no-repeat center;
+    background: url("/api/public/img/login.svg") no-repeat center;
     background-size: auto 50%;
   }
 }

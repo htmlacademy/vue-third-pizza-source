@@ -5,7 +5,7 @@
 
   <div v-if="authStore.user" class="user">
     <img
-      :src="getImage(authStore.user.avatar)"
+      :src="getPublicImage(authStore.user.avatar)"
       :alt="authStore.user.name"
       width="72"
       height="72"
@@ -54,6 +54,7 @@ import { useAuthStore } from "@/stores/auth";
 import AddressCard from "@/common/components/address/AddressCard.vue";
 import { ref } from "vue";
 import AddressEditForm from "@/common/components/address/AddressEditForm.vue";
+import { getPublicImage } from "@/common/helpers/public-image";
 
 const authStore = useAuthStore();
 const profileStore = useProfileStore();
@@ -70,10 +71,6 @@ const updateAddress = (address, data) => {
     ...address,
     ...data,
   });
-};
-
-const getImage = (image) => {
-  return new URL(`../assets/img/${image}`, import.meta.url).href;
 };
 </script>
 

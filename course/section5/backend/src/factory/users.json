@@ -3,7 +3,7 @@
     "name": "Вася Пупкин",
     "email": "user@example.com",
     "password": "user@example.com",
-    "avatar": "users/user.jpg",
+    "avatar": "/public/img/users/user.jpg",
     "phone": "+777 777 777"
   }
 ]

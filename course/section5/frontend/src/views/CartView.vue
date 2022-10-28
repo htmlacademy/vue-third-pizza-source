@@ -21,7 +21,7 @@
           >
             <div class="product cart-list__product">
               <img
-                :src="getImage('product.svg')"
+                :src="getPublicImage('/public/img/product.svg')"
                 class="product__img"
                 width="56"
                 height="56"
@@ -72,7 +72,7 @@
             >
               <p class="additional-list__description">
                 <img
-                  :src="getImage(misc.image)"
+                  :src="getPublicImage(misc.image)"
                   width="39"
                   height="60"
                   alt="Coca-Cola 0,5 литра"
@@ -189,6 +189,7 @@ import { useRouter } from "vue-router";
 import { computed, ref } from "vue";
 import { useProfileStore } from "@/stores/profile";
 import { useAuthStore } from "@/stores/auth";
+import { getPublicImage } from "@/common/helpers/public-image";
 
 const authStore = useAuthStore();
 const cartStore = useCartStore();
@@ -266,10 +267,6 @@ const submit = async () => {
     await router.push({ name: "success" });
     cartStore.reset();
   }
-};
-
-const getImage = (image) => {
-  return new URL(`../assets/img/${image}`, import.meta.url).href;
 };
 </script>
 
@@ -551,7 +548,7 @@ const getImage = (image) => {
   border-radius: 8px;
   outline: none;
   background-color: $silver-100;
-  background-image: url("@/assets/img/select.svg");
+  background-image: url("/api/public/img/select.svg");
   background-repeat: no-repeat;
   background-position: right 8px center;
 

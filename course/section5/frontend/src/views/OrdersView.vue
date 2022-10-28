@@ -41,7 +41,7 @@
       >
         <div class="product">
           <img
-            :src="getImage('product.svg')"
+            :src="getPublicImage('/public/img/product.svg')"
             class="product__img"
             width="56"
             height="56"
@@ -67,7 +67,7 @@
     <ul v-if="order.orderMisc" class="order__additional">
       <li v-for="misc in order.orderMisc" :key="misc.id">
         <img
-          :src="getImage(misc.image)"
+          :src="getPublicImage(misc.image)"
           width="20"
           height="30"
           alt="Coca-Cola 0,5 литра"
@@ -87,6 +87,7 @@
 import { useProfileStore } from "@/stores/profile";
 import { useCartStore } from "@/stores/cart";
 import { useRouter } from "vue-router";
+import { getPublicImage } from "@/common/helpers/public-image";
 
 const cartStore = useCartStore();
 const profileStore = useProfileStore();
@@ -95,10 +96,6 @@ const router = useRouter();
 const loadOrder = (order) => {
   cartStore.load(order);
   router.push({ name: "cart" });
-};
-
-const getImage = (image) => {
-  return new URL(`../assets/img/${image}`, import.meta.url).href;
 };
 </script>
 
