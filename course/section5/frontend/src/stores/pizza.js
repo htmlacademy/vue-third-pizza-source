@@ -30,10 +30,12 @@ export const usePizzaStore = defineStore("pizza", {
       const pizzaIngredientsIds = state.ingredients.map((i) => i.ingredientId);
       return data.ingredients
         .filter((i) => pizzaIngredientsIds.includes(i.id))
-        .map((i, idx) => {
+        .map((i) => {
           return {
             ...i,
-            quantity: state.ingredients[idx]?.quantity ?? 0,
+            quantity:
+              state.ingredients.find((item) => item.ingredientId === i.id)
+                ?.quantity ?? 0,
           };
         });
     },
