@@ -25,7 +25,7 @@ services:
   frontend:
     build:
       context: ./frontend
-#    https://github: com/vitejs/vite/issues/2671#issuecomment-829535806:
+    #    https://github: com/vitejs/vite/issues/2671#issuecomment-829535806:
     command: sh -c "npm rebuild esbuild && npm run dev"
     environment:
       PORT: '8080'
