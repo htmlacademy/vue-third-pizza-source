@@ -21,7 +21,7 @@ export class AuthService extends ApiService {
     return this.$delete(`${this.path}/logout`);
   }
 
-  async whoami() {
+  whoami() {
     return this.$get(`${this.path}/whoAmI`);
   }
 }

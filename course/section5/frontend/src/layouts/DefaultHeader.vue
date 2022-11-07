@@ -21,7 +21,7 @@
           width="32"
           height="32"
         />
-        <span>Василий Ложкин</span>
+        <span>{{ authStore.user.name }}</span>
       </router-link>
       <div
         v-if="authStore.isAuthenticated"

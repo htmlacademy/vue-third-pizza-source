@@ -5,7 +5,7 @@ export class ApiService {
     if (e instanceof AxiosError) {
       return new Error(e.response.data?.error?.message ?? e.message);
     } else {
-      return e.message;
+      return new Error(e.message);
     }
   }
 
