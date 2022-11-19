@@ -22,7 +22,6 @@
     "@vue/test-utils": "^2.0.0",
     "eslint": "^8.16.0",
     "eslint-plugin-vue": "^9.0.1",
-    "happy-dom": "^7.7.0",
     "jsdom": "^19.0.0",
     "prettier": "^2.6.2",
     "sass": "^1.52.1",
