@@ -1,27 +1,15 @@
 import { createPinia, setActivePinia } from "pinia";
 import { beforeEach, describe, expect, it } from "vitest";
-import { useDataStore } from "@/stores/data";
 import { useCartStore } from "@/stores/cart";
-import doughJSON from "../__mocks__/data/dough.json";
-import ingredientsJSON from "../__mocks__/data/ingredients.json";
-import miscJSON from "../__mocks__/data/misc.json";
-import saucesJSON from "../__mocks__/data/sauces.json";
-import sizesJSON from "../__mocks__/data/sizes.json";
+import { prepareData } from "../helpers/prepare-data";
 
 describe("Test cart store", () => {
-  let dataStore;
   let cartStore;
 
   beforeEach(() => {
     setActivePinia(createPinia());
-    dataStore = useDataStore();
+    prepareData();
     cartStore = useCartStore();
-
-    dataStore.doughs = doughJSON;
-    dataStore.ingredients = ingredientsJSON;
-    dataStore.sauces = saucesJSON;
-    dataStore.sizes = sizesJSON;
-    dataStore.misc = miscJSON;
   });
 
   it("Should return cart total", () => {
