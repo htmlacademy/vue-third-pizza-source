@@ -1,11 +1,21 @@
 import axios, { AxiosError } from "axios";
 
+class ApiError extends Error {
+  constructor(message, response) {
+    super(message);
+    this.response = response;
+  }
+}
+
 export class ApiService {
   _getError(e) {
     if (e instanceof AxiosError) {
-      return new Error(e.response.data?.error?.message ?? e.message);
+      return new ApiError(
+        e.response.data?.error?.message ?? e.message,
+        e.response
+      );
     } else {
-      return new Error(e.message);
+      return new ApiError(e.message, e.response);
     }
   }
 
