@@ -28,8 +28,6 @@
 </template>
 
 <script setup>
-import { defineProps } from "vue";
-
 defineProps({
   value: {
     type: Number,
