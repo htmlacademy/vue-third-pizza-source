@@ -135,6 +135,7 @@ const resetPizza = () => {
   }
 
   pizzaStore.setIngredients([]);
+  pizzaStore.setIndex(null);
 };
 
 onMounted(() => {

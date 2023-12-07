@@ -47,6 +47,9 @@ export const usePizzaStore = defineStore("pizza", {
     },
   },
   actions: {
+    setIndex(index) {
+      this.index = index;
+    },
     setName(name) {
       this.name = name;
     },
