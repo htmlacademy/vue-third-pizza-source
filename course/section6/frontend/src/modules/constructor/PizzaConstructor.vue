@@ -1,5 +1,5 @@
 <template>
-  <div class="pizza-constructor">
+  <div class="content__constructor">
     <app-drop @drop="emit('drop', $event.id)">
       <div class="pizza" :class="`pizza--foundation--${dough}-${sauce}`">
         <div class="pizza__wrapper">
@@ -46,7 +46,7 @@ const emit = defineEmits(["drop"]);
 </script>
 
 <style lang="scss" scoped>
-.pizza-constructor {
+.content__constructor {
   width: 315px;
   margin-top: 25px;
   margin-right: auto;
